@@ -1,0 +1,43 @@
+[project]
+name = "volunteer-web"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "alembic>=1.16.5",
+    "asyncpg>=0.30.0",
+    "fastapi>=0.116.1",
+    "orjson>=3.11.4",
+    "sqlalchemy>=2.0.43",
+    "uvicorn>=0.35.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "mypy>=1.17.1",
+    "ruff>=0.12.10",
+]
+
+[tool.mypy]
+warn_unused_configs = true  # Включает предупреждение о неиспользуемых настройках
+disallow_untyped_defs = true  # Требует аннотировать все функции
+disallow_incomplete_defs = true  # Требует, чтобы функции были полностью аннотированы
+check_untyped_defs = true  # Проверяет функции без аннотаций типов
+disallow_untyped_decorators = true  # Требует, чтобы декораторы были аннотированы
+warn_redundant_casts = true  # Включает предупреждение о лишних кастах типов
+warn_unused_ignores = true  # Включает предупреждение о директиве `# type: ignore`, которая не решает проблему
+warn_no_return = true  # Включает предупреждение, если функция не имеет `return` или возвращает `None` там, где ожидается значение
+warn_unreachable = true  # Включает предупреждение о недостижимом коде
+ignore_missing_imports = false  # Включает проверку всех импортов
+follow_imports = "silent"  # Отключает вывод сообщений о проблемах с импортами
+follow_imports_for_stubs = true  # Учитывает ошибки в типовых аннотациях для импортированных библиотек
+strict = true  # Включает все строгие проверки
+strict_equality = true  # Включает строгие проверки на сравнение типов
+files = ["src", "tests"]  # Указывает папки для проверки
+exclude = []  # Исключает файлы из проверки
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false  # Отключает запрет на неаннотированные функции в тестах
