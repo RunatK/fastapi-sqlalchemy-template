@@ -5,8 +5,9 @@
 
 ## Архитектура
 
-Для данного проекта используется DDD. 
+Для данного проекта используется DDD.
 
+![DDD схема](https://github.com/RunatK/fastapi-sqlalchemy-template/blob/assets/Untitled%20-%20Frame%2014.png?raw=true)
 
 Внутри проекта введены следующие обозначения:
 1. `Entity` представляет собой бизнес сущность, расположенные в слое `Domain entity`.
