@@ -11,18 +11,7 @@ PROJECT_NAME = os.getenv("PROJECT_NAME", "FastAPI & SQLAlchemy template")
 PROJECT_HOST = os.getenv("PROJECT_HOST", "localhost")
 PROJECT_PORT = int(os.getenv("PROJECT_PORT", "8000"))
 
-DEBUG = os.getenv("DEBUG", True)
-
-# Security
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv(
-    "ACCESS_TOKEN_EXPIRE_MINUTES", default=30
-)  # default 30 minutes
-REFRESH_TOKEN_EXPIRE_MINUTES = os.getenv(
-    "REFRESH_TOKEN_EXPIRE_MINUTES", default=60 * 24 * 7
-)  # default 7 days
-JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
-JWT_REFRESH_SECRET_KEY = os.getenv("JWT_REFRESH_SECRET_KEY")
+DEBUG = os.getenv("DEBUG", False)
 
 # База данных
 DB_HOST = os.getenv("POSTGRES_HOST", "localhost")

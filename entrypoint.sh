@@ -1,3 +1,3 @@
 #!/bin/bash
-uv run alembic upgrade head;
-uv run python ./web.py;
+uv run alembic upgrade head
+uv run python web.py;
